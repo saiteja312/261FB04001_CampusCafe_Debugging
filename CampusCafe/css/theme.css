@@ -1,0 +1,11 @@
+/* ===== CampusCafe theme (css/theme.css) — colour variables ===== */
+:root {
+  --primary: #8b4513;
+  --primary-dark: #6b3410;
+  --bg: #fbf6f0;
+  --text: #2b2118;
+  --muted: #7a6a5c;
+  --border: #e6d9cb;
+  --danger: #c62828;
+  --success: #2e7d32;
+}

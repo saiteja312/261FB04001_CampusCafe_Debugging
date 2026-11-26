@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusCafe — Checkout</title>
+  <!-- Pages in /pages must go one level up (../) to reach css/ and js/ -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>CampusCafe</h1>
+      <p>Checkout</p>
+    </div>
+    <a class="btn btn-secondary" href="../index.html">&larr; Back to Menu</a>
+  </header>
+
+  <main class="container checkout-layout">
+    <section class="card">
+      <h2>Order Summary</h2>
+      <ul id="checkout-list" class="cart-list"></ul>
+
+      <div class="summary-row"><span>Subtotal</span><span>₹<span id="co-subtotal">0</span></span></div>
+      <div class="summary-row"><span>Discount</span><span>- ₹<span id="co-discount">0</span></span></div>
+      <div class="summary-row summary-total"><span>Grand Total</span><span>₹<span id="co-grand">0</span></span></div>
+
+      <div class="promo-row">
+        <input type="text" id="promo-input" class="search-input" placeholder="Promo code (e.g. STUDENT15)" />
+        <button id="promo-btn" class="btn btn-secondary" type="button">Apply</button>
+      </div>
+      <p id="promo-msg" class="msg-error"></p>
+    </section>
+
+    <section class="card">
+      <h2>Student Details</h2>
+      <form id="order-form" novalidate>
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" class="search-input" placeholder="e.g. Anil Kumar" />
+
+        <label for="roll-no">Roll Number</label>
+        <input type="text" id="roll-no" class="search-input" placeholder="e.g. 21CS1042" />
+
+        <p id="order-msg" class="msg-error"></p>
+        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:0.75rem;">Confirm Order</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="../js/checkout.js"></script>
+</body>
+</html>

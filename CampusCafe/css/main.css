@@ -1,0 +1,147 @@
+/* ===== CampusCafe base layout (css/main.css) ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+}
+.brand h1 { margin: 0; font-size: 1.5rem; }
+.brand p { margin: 0.15rem 0 0; font-size: 0.85rem; opacity: 0.9; }
+
+.cart-pill {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+.checkout-layout { grid-template-columns: 1fr 1fr; }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.filter-group { display: flex; gap: 0.5rem; }
+
+.filter-btn {
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.filter-btn.active { background: var(--primary); color: #fff; }
+
+.search-input {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 260px;
+}
+.card .search-input { max-width: none; display: block; margin-bottom: 0.9rem; }
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.menu-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.menu-card img { width: 72px; height: 72px; }
+.menu-card h3 { margin: 0.5rem 0 0.2rem; font-size: 1rem; }
+.menu-card .price { color: var(--primary); font-weight: 700; margin: 0 0 0.6rem; }
+.empty-state { grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 2rem 0; }
+
+.cart-panel, .card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  align-self: start;
+}
+.cart-panel h2, .card h2 { margin-top: 0; font-size: 1.15rem; }
+
+.cart-list { list-style: none; margin: 0 0 1rem; padding: 0; }
+.cart-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.cart-item-name { flex: 1; font-size: 0.95rem; }
+.qty-controls { display: flex; align-items: center; gap: 0.4rem; }
+.qty-btn {
+  width: 26px; height: 26px;
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.qty-btn:hover { background: var(--primary); color: #fff; }
+.cart-empty { color: var(--muted); justify-content: center; border-bottom: none !important; }
+
+.summary-row { display: flex; justify-content: space-between; padding: 0.3rem 0; }
+.summary-total { font-weight: 700; font-size: 1.05rem; border-top: 2px solid var(--border); margin-top: 0.4rem; padding-top: 0.6rem; }
+
+.promo-row { display: flex; gap: 0.5rem; margin-top: 1rem; }
+.promo-row .search-input { margin-bottom: 0; max-width: none; flex: 1; }
+
+label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary { background: #fff; color: var(--primary); border: 1px solid var(--primary); }
+
+.msg-error { color: var(--danger); min-height: 1.2em; font-size: 0.9rem; margin: 0.5rem 0 0; }
+.msg-success { color: var(--success); font-weight: 600; }
+
+@media (max-width: 800px) {
+  .container, .checkout-layout { grid-template-columns: 1fr; }
+}
